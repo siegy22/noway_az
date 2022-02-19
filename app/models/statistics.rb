@@ -33,8 +33,10 @@ COUNT(*) FILTER (WHERE win = TRUE) as matches_won,
 SUM(kills) as kills,
 SUM(deaths) as deaths,
 SUM(assists) as assists,
-AVG(cs_per_minute) AS cs_per_minute
+AVG(cs_per_minute) AS cs_per_minute,
+MIN(champions.name) as champion_name,
+MIN(champions.riot_id) as champion_riot_id
 SQL
-    ).group(:champion_id).includes(:champion).order(matches_played: :desc)
+    ).group(:champion_id).joins(:champion).order(matches_played: :desc, champion_name: :asc)
   end
 end
