@@ -1,0 +1,55 @@
+.retro {
+  position: relative;
+  font-family: 'Exo';
+  font-size: 9em;
+  margin: 0;
+  transform: skew(-15deg);
+  letter-spacing: 0.03em;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -0.1em;
+    right: 0.05em;
+    width: 0.4em;
+    height: 0.4em;
+  }
+
+  span:first-child {
+    display: block;
+    -webkit-text-stroke: 0.06em rgba(black, 0.5);
+    line-height: 10rem;
+  }
+
+  span:last-child {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: linear-gradient(
+      #032d50 25%,
+      #00a1ef 35%,
+      white 50%,
+      #20125f 50%,
+      #8313e7 55%,
+      #ff61af 75%,
+      #ff61af 100%
+    );
+    -webkit-text-stroke: 0.01em #94a0b9;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 10rem;
+  }
+}
+
+.neon {
+  font-family: 'Mr Dafoe', cursive;
+  color: white;
+  @media (prefers-color-scheme: dark) {
+    text-shadow: 0 0 0.05em #fff, 0 0 0.3em #E6F8F0, 0 0 0.4em #E6F8F0;
+  }
+
+  @media (prefers-color-scheme: light) {
+    text-shadow: 0 0 0.05em #fff, 0 0 0.3em #3A4745, 0 0 0.4em #3A4745;
+  }
+  transform: rotate(-7deg);
+}
