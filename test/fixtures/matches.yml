@@ -1,0 +1,51 @@
+zyra:
+  riot_id: EUW_1
+  win: true
+  champion: zyra
+  kills: 3
+  deaths: 1
+  assists: 3
+  duration: <%= 28.minutes.to_i %>
+  cs_per_minute: 2.1
+
+zoe_one:
+  riot_id: EUW_2
+  win: false
+  champion: zoe
+  kills: 2
+  deaths: 5
+  assists: 5
+  duration: <%= 39.minutes.to_i %>
+  cs_per_minute: 7.8 
+
+zoe_two:
+  riot_id: EUW_3
+  win: true
+  champion: zoe
+  kills: 9
+  deaths: 4
+  assists: 16
+  duration: <%= 30.minutes.to_i %>
+  cs_per_minute: 8.9
+
+zilean_one:
+  riot_id: EUW_4
+  win: true
+  champion: zilean
+  kills: 2
+  deaths: 0
+  assists: 18
+  duration: <%= 27.minutes.to_i %>
+  cs_per_minute: 1.2
+
+yorick_one:
+  riot_id: EUW_5
+  win: false
+  champion: yorick
+  kills: 2
+  deaths: 2
+  assists: 8
+  duration: <%= 35.minutes.to_i %>
+  cs_per_minute: 9.3
+
+

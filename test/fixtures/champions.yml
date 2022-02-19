@@ -1,0 +1,477 @@
+zyra:
+  riot_id: Zyra
+  name: Zyra
+zoe:
+  riot_id: Zoe
+  name: Zoe
+zilean:
+  riot_id: Zilean
+  name: Zilean
+ziggs:
+  riot_id: Ziggs
+  name: Ziggs
+zeri:
+  riot_id: Zeri
+  name: Zeri
+zed:
+  riot_id: Zed
+  name: Zed
+zac:
+  riot_id: Zac
+  name: Zac
+yuumi:
+  riot_id: Yuumi
+  name: Yuumi
+yorick:
+  riot_id: Yorick
+  name: Yorick
+yone:
+  riot_id: Yone
+  name: Yone
+yasuo:
+  riot_id: Yasuo
+  name: Yasuo
+xin_zhao:
+  riot_id: XinZhao
+  name: Xin Zhao
+xerath:
+  riot_id: Xerath
+  name: Xerath
+xayah:
+  riot_id: Xayah
+  name: Xayah
+wukong:
+  riot_id: MonkeyKing
+  name: Wukong
+warwick:
+  riot_id: Warwick
+  name: Warwick
+volibear:
+  riot_id: Volibear
+  name: Volibear
+vladimir:
+  riot_id: Vladimir
+  name: Vladimir
+viktor:
+  riot_id: Viktor
+  name: Viktor
+viego:
+  riot_id: Viego
+  name: Viego
+vi:
+  riot_id: Vi
+  name: Vi
+vex:
+  riot_id: Vex
+  name: Vex
+vel'koz:
+  riot_id: Velkoz
+  name: Vel'Koz
+veigar:
+  riot_id: Veigar
+  name: Veigar
+vayne:
+  riot_id: Vayne
+  name: Vayne
+varus:
+  riot_id: Varus
+  name: Varus
+urgot:
+  riot_id: Urgot
+  name: Urgot
+udyr:
+  riot_id: Udyr
+  name: Udyr
+twitch:
+  riot_id: Twitch
+  name: Twitch
+twisted_fate:
+  riot_id: TwistedFate
+  name: Twisted Fate
+tryndamere:
+  riot_id: Tryndamere
+  name: Tryndamere
+trundle:
+  riot_id: Trundle
+  name: Trundle
+tristana:
+  riot_id: Tristana
+  name: Tristana
+thresh:
+  riot_id: Thresh
+  name: Thresh
+teemo:
+  riot_id: Teemo
+  name: Teemo
+taric:
+  riot_id: Taric
+  name: Taric
+talon:
+  riot_id: Talon
+  name: Talon
+taliyah:
+  riot_id: Taliyah
+  name: Taliyah
+tahm_kench:
+  riot_id: TahmKench
+  name: Tahm Kench
+syndra:
+  riot_id: Syndra
+  name: Syndra
+sylas:
+  riot_id: Sylas
+  name: Sylas
+swain:
+  riot_id: Swain
+  name: Swain
+soraka:
+  riot_id: Soraka
+  name: Soraka
+sona:
+  riot_id: Sona
+  name: Sona
+skarner:
+  riot_id: Skarner
+  name: Skarner
+sivir:
+  riot_id: Sivir
+  name: Sivir
+sion:
+  riot_id: Sion
+  name: Sion
+singed:
+  riot_id: Singed
+  name: Singed
+shyvana:
+  riot_id: Shyvana
+  name: Shyvana
+shen:
+  riot_id: Shen
+  name: Shen
+shaco:
+  riot_id: Shaco
+  name: Shaco
+sett:
+  riot_id: Sett
+  name: Sett
+seraphine:
+  riot_id: Seraphine
+  name: Seraphine
+senna:
+  riot_id: Senna
+  name: Senna
+sejuani:
+  riot_id: Sejuani
+  name: Sejuani
+samira:
+  riot_id: Samira
+  name: Samira
+ryze:
+  riot_id: Ryze
+  name: Ryze
+rumble:
+  riot_id: Rumble
+  name: Rumble
+riven:
+  riot_id: Riven
+  name: Riven
+rengar:
+  riot_id: Rengar
+  name: Rengar
+renekton:
+  riot_id: Renekton
+  name: Renekton
+renata_glasc:
+  riot_id: Renata
+  name: Renata Glasc
+rell:
+  riot_id: Rell
+  name: Rell
+rek_sai:
+  riot_id: RekSai
+  name: Rek'Sai
+rammus:
+  riot_id: Rammus
+  name: Rammus
+rakan:
+  riot_id: Rakan
+  name: Rakan
+quinn:
+  riot_id: Quinn
+  name: Quinn
+qiyana:
+  riot_id: Qiyana
+  name: Qiyana
+pyke:
+  riot_id: Pyke
+  name: Pyke
+poppy:
+  riot_id: Poppy
+  name: Poppy
+pantheon:
+  riot_id: Pantheon
+  name: Pantheon
+ornn:
+  riot_id: Ornn
+  name: Ornn
+orianna:
+  riot_id: Orianna
+  name: Orianna
+olaf:
+  riot_id: Olaf
+  name: Olaf
+nunu_and_willump:
+  riot_id: Nunu
+  name: Nunu & Willump
+nocturne:
+  riot_id: Nocturne
+  name: Nocturne
+nidalee:
+  riot_id: Nidalee
+  name: Nidalee
+neeko:
+  riot_id: Neeko
+  name: Neeko
+nautilus:
+  riot_id: Nautilus
+  name: Nautilus
+nasus:
+  riot_id: Nasus
+  name: Nasus
+nami:
+  riot_id: Nami
+  name: Nami
+morgana:
+  riot_id: Morgana
+  name: Morgana
+mordekaiser:
+  riot_id: Mordekaiser
+  name: Mordekaiser
+miss_fortune:
+  riot_id: MissFortune
+  name: Miss Fortune
+master_yi:
+  riot_id: MasterYi
+  name: Master Yi
+maokai:
+  riot_id: Maokai
+  name: Maokai
+malzahar:
+  riot_id: Malzahar
+  name: Malzahar
+malphite:
+  riot_id: Malphite
+  name: Malphite
+lux:
+  riot_id: Lux
+  name: Lux
+lulu:
+  riot_id: Lulu
+  name: Lulu
+lucian:
+  riot_id: Lucian
+  name: Lucian
+lissandra:
+  riot_id: Lissandra
+  name: Lissandra
+lillia:
+  riot_id: Lillia
+  name: Lillia
+leona:
+  riot_id: Leona
+  name: Leona
+lee_sin:
+  riot_id: LeeSin
+  name: Lee Sin
+leblanc:
+  riot_id: Leblanc
+  name: LeBlanc
+kog_maw:
+  riot_id: KogMaw
+  name: Kog'Maw
+kled:
+  riot_id: Kled
+  name: Kled
+kindred:
+  riot_id: Kindred
+  name: Kindred
+kha_zix:
+  riot_id: Khazix
+  name: Kha'Zix
+kennen:
+  riot_id: Kennen
+  name: Kennen
+kayn:
+  riot_id: Kayn
+  name: Kayn
+kayle:
+  riot_id: Kayle
+  name: Kayle
+katarina:
+  riot_id: Katarina
+  name: Katarina
+kassadin:
+  riot_id: Kassadin
+  name: Kassadin
+karthus:
+  riot_id: Karthus
+  name: Karthus
+karma:
+  riot_id: Karma
+  name: Karma
+kalista:
+  riot_id: Kalista
+  name: Kalista
+kai_sa:
+  riot_id: Kaisa
+  name: Kai'Sa
+jinx:
+  riot_id: Jinx
+  name: Jinx
+jhin:
+  riot_id: Jhin
+  name: Jhin
+jayce:
+  riot_id: Jayce
+  name: Jayce
+jax:
+  riot_id: Jax
+  name: Jax
+jarvan_iv:
+  riot_id: JarvanIV
+  name: Jarvan IV
+janna:
+  riot_id: Janna
+  name: Janna
+ivern:
+  riot_id: Ivern
+  name: Ivern
+irelia:
+  riot_id: Irelia
+  name: Irelia
+illaoi:
+  riot_id: Illaoi
+  name: Illaoi
+heimerdinger:
+  riot_id: Heimerdinger
+  name: Heimerdinger
+hecarim:
+  riot_id: Hecarim
+  name: Hecarim
+gwen:
+  riot_id: Gwen
+  name: Gwen
+graves:
+  riot_id: Graves
+  name: Graves
+gragas:
+  riot_id: Gragas
+  name: Gragas
+gnar:
+  riot_id: Gnar
+  name: Gnar
+garen:
+  riot_id: Garen
+  name: Garen
+gangplank:
+  riot_id: Gangplank
+  name: Gangplank
+galio:
+  riot_id: Galio
+  name: Galio
+fizz:
+  riot_id: Fizz
+  name: Fizz
+fiora:
+  riot_id: Fiora
+  name: Fiora
+fiddlesticks:
+  riot_id: Fiddlesticks
+  name: Fiddlesticks
+ezreal:
+  riot_id: Ezreal
+  name: Ezreal
+evelynn:
+  riot_id: Evelynn
+  name: Evelynn
+elise:
+  riot_id: Elise
+  name: Elise
+ekko:
+  riot_id: Ekko
+  name: Ekko
+draven:
+  riot_id: Draven
+  name: Draven
+dr_mundo:
+  riot_id: DrMundo
+  name: Dr. Mundo
+diana:
+  riot_id: Diana
+  name: Diana
+darius:
+  riot_id: Darius
+  name: Darius
+corki:
+  riot_id: Corki
+  name: Corki
+cho_gath:
+  riot_id: Chogath
+  name: Cho'Gath
+cassiopeia:
+  riot_id: Cassiopeia
+  name: Cassiopeia
+camille:
+  riot_id: Camille
+  name: Camille
+caitlyn:
+  riot_id: Caitlyn
+  name: Caitlyn
+braum:
+  riot_id: Braum
+  name: Braum
+brand:
+  riot_id: Brand
+  name: Brand
+blitzcrank:
+  riot_id: Blitzcrank
+  name: Blitzcrank
+bard:
+  riot_id: Bard
+  name: Bard
+azir:
+  riot_id: Azir
+  name: Azir
+aurelion_sol:
+  riot_id: AurelionSol
+  name: Aurelion Sol
+ashe:
+  riot_id: Ashe
+  name: Ashe
+aphelios:
+  riot_id: Aphelios
+  name: Aphelios
+annie:
+  riot_id: Annie
+  name: Annie
+anivia:
+  riot_id: Anivia
+  name: Anivia
+amumu:
+  riot_id: Amumu
+  name: Amumu
+alistar:
+  riot_id: Alistar
+  name: Alistar
+akshan:
+  riot_id: Akshan
+  name: Akshan
+akali:
+  riot_id: Akali
+  name: Akali
+ahri:
+  riot_id: Ahri
+  name: Ahri
+aatrox:
+  riot_id: Aatrox
+  name: Aatrox
