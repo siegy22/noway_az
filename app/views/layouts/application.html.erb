@@ -10,10 +10,14 @@
     <%= javascript_importmap_tags %>
     <%= favicon_link_tag asset_path("favicon.png") %>
     <%= display_meta_tags(default_meta_tags) %>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@900&family=Mr+Dafoe&display=swap" rel="stylesheet">
   </head>
 
   <body class="bg-[#efefef] dark:bg-[#131326] dark:text-white">
-    <main class="container mx-auto mt-10">
+    <main class="container mx-auto mt-6">
       <%= yield %>
     </main>
   </body>
