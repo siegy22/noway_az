@@ -1,103 +1,101 @@
 <% description "Aktuell bei #{@statistics.current_champion.name} — #{@statistics.total_games} Spiele — #{@statistics.winrate}% Winrate" %>
 
-
-<div class="flex flex-row max-w-4xl mx-auto">
-  <a href="https://twitch.tv/noway4u_sir" target="_blank" class="flex items-center">
-    <%= fa_icon "twitch", class: 'mr-1' %> <span class="uppercase">Twitch</span>
-    <!-- <span class="ml-1 items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full ">LIVE</span> -->
-  </a>
-  <span class="mx-2">|</span>
-  <a href="https://euw.op.gg/summoners/euw/Alphabet4uSir" target="_blank" class="flex items-center">
-    <span class="uppercase">op.gg</span>
-  </a>
-</div>
-
-<div class="flex justify-center items-center mt-14">
-  <div>
-    <h1 class="retro">
-      <span class="text-6xl sm:text-6xl neon-back md:text-9xl">Das große Z-A</span>
-      <span class="text-6xl sm:text-6xl neon-front md:text-9xl">Das große Z-A</span>
-    </h1>
-    <h2 class="text-center -mt-2 neon text-5xl md:text-7xl">NoWay4u</h2>
+<% unless @overlay %>
+  <div class="flex flex-row max-w-4xl mx-auto">
+    <a href="https://twitch.tv/noway4u_sir" target="_blank" class="flex items-center">
+      <%= fa_icon "twitch", class: 'mr-1' %> <span class="uppercase">Twitch</span>
+      <!-- <span class="ml-1 items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full ">LIVE</span> -->
+    </a>
+    <span class="mx-2">|</span>
+    <a href="https://euw.op.gg/summoners/euw/Alphabet4uSir" target="_blank" class="flex items-center">
+      <span class="uppercase">op.gg</span>
+    </a>
   </div>
-</div>
 
-<div class="flex flex-row flex-wrap justify-center mt-16">
-  <div class="flex w-full">
-    <div class="flex flex-col items-center" style="margin-left: calc(<%= percentage_done(@statistics) %>% - 60px);">
-      <%= image_tag "champions/#{@statistics.current_champion.riot_id}.png", title: @statistics.current_champion.name, id: 'current-champion' %>
-      <div class="indicator w-0.5 h-24 bg-black dark:bg-white z-10"></div>
+  <div class="flex justify-center items-center mt-14">
+    <div>
+      <h1 class="retro">
+        <span class="text-6xl sm:text-6xl neon-back md:text-9xl">Das große Z-A</span>
+        <span class="text-6xl sm:text-6xl neon-front md:text-9xl">Das große Z-A</span>
+      </h1>
+      <h2 class="text-center -mt-2 neon text-5xl md:text-7xl">NoWay4u</h2>
     </div>
   </div>
-  <div class="w-full lg:h-12 md:h-10 bg-gray-200 rounded-full dark:bg-gray-700 -mt-6 lg:-mt-12 md:-mt-10">
-    <%= content_tag :div, class: 'lg:h-12 md:h-10  bg-[#5acd9d] rounded-l-full flex items-center justify-center', style: "width: #{percentage_done(@statistics)}%" do %>
-      <span class="md:text-xl whitespace-nowrap text-black dark:text-white" id="progress">
-        <%= @statistics.finished_champions.length %> / <%= @statistics.total_champions.count %>
-      </span>
-    <% end %>
-  </div>
-</div>
+<% end %>
 
-<div class="flex flex-row flex-wrap max-w-4xl mx-auto mt-16 justify-around">
-  <%= render "home/statistic_card", label: 'Spiele', value: @statistics.total_games, id: 'games' %>
-  <%= render "home/statistic_card", label: 'Winrate', value: "#{@statistics.winrate}%", id: 'winrate' %>
-  <%= render "home/statistic_card", label: 'Dauer', value: distance_of_time_in_words(@statistics.duration), id: 'duration' %>
-</div>
+<% if @overlay %>
+  <%= turbo_stream_from "progress" %>
 
-<div class="flex flex-col items-center mt-20">
-  <div class="max-w-4xl w-full flex flex-row">
-    <% [[1, "1 Spiel"], [2, "2 Spiele"], [3, "3-4 Spiele"], [5, "5 oder mehr Spiele"]].each do |num, label| %>
-      <div class="flex flex-row items-center mr-6">
-        <%= content_tag :div, '', class: color_for_matches_played(num), style: 'width: 17px; height: 40px' %>
-        <span class="ml-1"><%= label %></span>
-      </div>
-    <% end %>
-    <div class="flex flex-row items-center mr-6">
-      <div class="w-2 h-2 ml-1 bg-orange-500 rounded-full"></div>
-      <span class="ml-2">Noch offen</span>
-    </div>
+  <%= turbo_frame_tag "progress" do %>
+    <%= render "home/progress", statistics: @statistics %>
+  <% end %>
+
+<% else %>
+  <%= render "home/progress", statistics: @statistics %>
+<% end %>
+
+<% unless @overlay %>
+  <div class="flex flex-row flex-wrap max-w-4xl mx-auto mt-16 justify-around">
+    <%= render "home/statistic_card", label: 'Spiele', value: @statistics.total_games, id: 'games' %>
+    <%= render "home/statistic_card", label: 'Winrate', value: "#{@statistics.winrate}%", id: 'winrate' %>
+    <%= render "home/statistic_card", label: 'Dauer', value: distance_of_time_in_words(@statistics.duration), id: 'duration' %>
   </div>
 
-  <table class="table-auto max-w-4xl w-full mt-6 sortable">
-    <thead>
-      <tr>
-        <th class="border-b dark:border-slate-600 p-1 no-sort"></th>
-        <% ["Champion", "Anzahl Spiele", "Winrate", "KDA", "CS/Min"].each do |header| %>
-          <th id="sort-by-<%= header.downcase.gsub(/\ |\//, '-') %>" class="border-b dark:border-slate-600 p-2 font-medium text-slate-500 dark:text-slate-200 text-left  <%= 'dir-d' if header == "Anzahl Spiele" %>">
-            <%= header %>
-          </th>
-        <% end %>
-      </tr>
-    </thead>
-    <tbody id="champ-stats">
-      <% @statistics.champions.each do |stat| %>
-        <tr class="border-b border-slate-500 dark:border-slate-600 text-slate-600 dark:text-slate-200" id="champ-stat-<%= stat.champion_riot_id.downcase %>">
-          <td class="p-1 <%= color_for_matches_played(stat.matches_played) %>"></td>
-          <td class="p-2 flex flex-row items-center">
-            <%= image_tag "champions/#{stat.champion_riot_id}.png", class: 'w-5 h-5 max-w-none rounded-full mr-1' %>
-            <%= stat.champion_name %>
-            <% if stat.matches_won.zero? %>
-              <div class="w-2 h-2 ml-1 bg-orange-500 rounded-full"></div>
-            <% end %>
-          </td>
-          <td class="p-2">
-            <%= stat.matches_played %>
-          </td>
-          <td class="p-2" data-sort="<%= (stat.matches_won.to_f / stat.matches_played * 100).round %>">
-            <%= (stat.matches_won.to_f / stat.matches_played * 100).round  %>%
-          </td>
-          <td class="p-2" data-sort="<%= stat.perfect_kda? ? 1_000_000 : stat.kda.round(2) %>">
-            <% if stat.perfect_kda? %>
-              Perfekt
-            <% else %>
-              <%= number_with_precision(stat.kda, precision: 2) %>
-            <% end %>
-          </td>
-          <td class="p-2" data-sort="<%= stat.cs_per_minute.round(1) %>">
-            <%= number_with_precision(stat.cs_per_minute, precision: 1) %>
-          </td>
-        </tr>
+  <div class="flex flex-col items-center mt-20">
+    <div class="max-w-4xl w-full flex flex-row">
+      <% [[1, "1 Spiel"], [2, "2 Spiele"], [3, "3-4 Spiele"], [5, "5 oder mehr Spiele"]].each do |num, label| %>
+        <div class="flex flex-row items-center mr-6">
+          <%= content_tag :div, '', class: color_for_matches_played(num), style: 'width: 17px; height: 40px' %>
+          <span class="ml-1"><%= label %></span>
+        </div>
       <% end %>
-    </tbody>
-  </table>
-</div>
+      <div class="flex flex-row items-center mr-6">
+        <div class="w-2 h-2 ml-1 bg-orange-500 rounded-full"></div>
+        <span class="ml-2">Noch offen</span>
+      </div>
+    </div>
+
+    <table class="table-auto max-w-4xl w-full mt-6 sortable">
+      <thead>
+        <tr>
+          <th class="border-b dark:border-slate-600 p-1 no-sort"></th>
+          <% ["Champion", "Anzahl Spiele", "Winrate", "KDA", "CS/Min"].each do |header| %>
+            <th id="sort-by-<%= header.downcase.gsub(/\ |\//, '-') %>" class="border-b dark:border-slate-600 p-2 font-medium text-slate-500 dark:text-slate-200 text-left  <%= 'dir-d' if header == "Anzahl Spiele" %>">
+              <%= header %>
+            </th>
+          <% end %>
+        </tr>
+      </thead>
+      <tbody id="champ-stats">
+        <% @statistics.champions.each do |stat| %>
+          <tr class="border-b border-slate-500 dark:border-slate-600 text-slate-600 dark:text-slate-200" id="champ-stat-<%= stat.champion_riot_id.downcase %>">
+            <td class="p-1 <%= color_for_matches_played(stat.matches_played) %>"></td>
+            <td class="p-2 flex flex-row items-center">
+              <%= image_tag "champions/#{stat.champion_riot_id}.png", class: 'w-5 h-5 max-w-none rounded-full mr-1' %>
+              <%= stat.champion_name %>
+              <% if stat.matches_won.zero? %>
+                <div class="w-2 h-2 ml-1 bg-orange-500 rounded-full"></div>
+              <% end %>
+            </td>
+            <td class="p-2">
+              <%= stat.matches_played %>
+            </td>
+            <td class="p-2" data-sort="<%= (stat.matches_won.to_f / stat.matches_played * 100).round %>">
+              <%= (stat.matches_won.to_f / stat.matches_played * 100).round  %>%
+            </td>
+            <td class="p-2" data-sort="<%= stat.perfect_kda? ? 1_000_000 : stat.kda.round(2) %>">
+              <% if stat.perfect_kda? %>
+                Perfekt
+              <% else %>
+                <%= number_with_precision(stat.kda, precision: 2) %>
+              <% end %>
+            </td>
+            <td class="p-2" data-sort="<%= stat.cs_per_minute.round(1) %>">
+              <%= number_with_precision(stat.cs_per_minute, precision: 1) %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>

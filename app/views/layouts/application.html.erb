@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Exo:wght@900&family=Mr+Dafoe&display=swap" rel="stylesheet">
   </head>
 
-  <body class="bg-[#efefef] dark:bg-[#131326] dark:text-white">
+  <body class="dark:text-white <%= @overlay ? 'bg-transparent' : 'bg-[#efefef] dark:bg-[#131326]' %>">
     <main class="container mx-auto mt-6">
       <%= yield %>
     </main>

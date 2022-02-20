@@ -1,6 +1,7 @@
 class Sync
   def self.start!(overwrite: false)
     return unless Rails.application.config.api_key
+
     ActiveRecord::Base.transaction do
       api_client = RiotApiClient.new
       match_ids = api_client.match_ids
@@ -9,5 +10,7 @@ class Sync
 
       Match.sync_from_payload!(matches)
     end
+
+    Turbo::StreamsChannel.broadcast_update_to(:progress, target: "progress", locals: {}, partial: "home/progress")
   end
 end
