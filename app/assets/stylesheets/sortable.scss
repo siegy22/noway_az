@@ -1,0 +1,33 @@
+.sortable th {
+  cursor: pointer;
+}
+
+.sortable th.dir-d {
+  @media (prefers-color-scheme: dark) {
+    color: #fff !important;
+  }
+
+  @media (prefers-color-scheme: light) {
+    color: #000 !important;
+  }
+}
+
+.sortable th.dir-d::after {
+  color: inherit;
+  content: ' \025BE';
+}
+
+.sortable th.dir-u {
+  @media (prefers-color-scheme: dark) {
+    color: #fff !important;
+  }
+
+  @media (prefers-color-scheme: light) {
+    color: #000 !important;
+  }
+}
+
+.sortable th.dir-u::after {
+  color: inherit;
+  content: ' \025B4';
+}
