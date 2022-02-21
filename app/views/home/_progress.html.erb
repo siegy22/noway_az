@@ -1,10 +1,24 @@
 <% statistics ||= Statistics.new %>
 <% overlay ||= false %>
 
-<div class="flex flex-row flex-wrap justify-center mt-16 ">
+<div class="flex flex-row flex-wrap justify-center mt-16">
   <div class="flex w-full">
-    <div class="flex flex-col items-center" style="margin-left: calc(<%= percentage_done(statistics) %>% - 60px);">
-      <%= image_tag "champions/#{statistics.current_champion.riot_id}.png", title: statistics.current_champion.name, id: 'current-champion' %>
+    <div class="flex flex-col items-center" style="margin-left: calc(<%= percentage_done(statistics) %>% - 228px);">
+      <div class="flex flex-row flex-nowrap items-end">
+        <% statistics.previous_champions.limit(3).reverse.each.with_index do |prev_champ, index| %>
+          <%= image_tag "champions/#{prev_champ.riot_id}.png",
+           title: prev_champ.name,
+           class: "w-14 h-14"
+          %>
+        <% end %>
+        <%= image_tag "champions/#{statistics.current_champion.riot_id}.png", title: statistics.current_champion.name, id: 'current-champion' %>
+        <% statistics.next_champions.limit(3).each.with_index do |next_champ, index| %>
+          <%= image_tag "champions/#{next_champ.riot_id}.png",
+           title: next_champ.name,
+           class: "w-14 h-14 #{'grayscale' unless next_champ.finished? }"
+          %>
+        <% end %>
+      </div>
       <div class="indicator w-0.5 h-24 bg-black dark:bg-white z-10"></div>
     </div>
   </div>

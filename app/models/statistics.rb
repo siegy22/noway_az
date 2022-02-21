@@ -24,6 +24,14 @@ class Statistics
     Champion.where.not(id: finished_champions.map(&:champion_id)).order(name: :desc).first
   end
 
+  def previous_champions
+    Champion.where("name > ?", current_champion.name).order(name: :asc)
+  end
+
+  def next_champions
+    Champion.where("name < ?", current_champion.name).order(name: :desc)
+  end
+
   def champions
     Match.select(
       <<-SQL
