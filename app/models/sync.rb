@@ -11,6 +11,6 @@ class Sync
       Match.sync_from_payload!(matches)
     end
 
-    Turbo::StreamsChannel.broadcast_update_to(:progress, target: "progress", locals: {}, partial: "home/progress")
+    Turbo::StreamsChannel.broadcast_update_to(:progress, target: "progress", locals: { overlay: true }, partial: "home/progress")
   end
 end

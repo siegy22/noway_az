@@ -27,7 +27,7 @@
   <%= turbo_stream_from "progress" %>
 
   <%= turbo_frame_tag "progress" do %>
-    <%= render "home/progress", statistics: @statistics %>
+    <%= render "home/progress", statistics: @statistics, overlay: @overlay %>
   <% end %>
 
 <% else %>
