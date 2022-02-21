@@ -1,7 +1,6 @@
 .retro {
   position: relative;
   font-family: 'Exo';
-  font-size: 9em;
   margin: 0;
   transform: skew(-15deg);
   letter-spacing: 0.03em;
@@ -18,7 +17,7 @@
   span:first-child {
     display: block;
     -webkit-text-stroke: 0.06em rgba(black, 0.5);
-    line-height: 10rem;
+    line-height: initial;
   }
 
   span:last-child {
@@ -37,7 +36,7 @@
     -webkit-text-stroke: 0.01em #94a0b9;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    line-height: 10rem;
+    line-height: initial;
   }
 }
 

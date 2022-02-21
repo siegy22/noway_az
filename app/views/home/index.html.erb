@@ -15,10 +15,10 @@
   <div class="flex justify-center items-center mt-14">
     <div>
       <h1 class="retro">
-        <span class="text-6xl sm:text-6xl neon-back md:text-9xl">Das große Z-A</span>
-        <span class="text-6xl sm:text-6xl neon-front md:text-9xl">Das große Z-A</span>
+        <span class="text-5xl sm:text-6xl neon-back md:text-8xl lg:text-9xl">Das große Z-A</span>
+        <span class="text-5xl sm:text-6xl neon-front md:text-8xl lg:text-9xl">Das große Z-A</span>
       </h1>
-      <h2 class="text-center -mt-2 neon text-5xl md:text-7xl">NoWay4u</h2>
+      <h2 class="text-center -mt-4 neon text-3xl sm:text-5xl md:text-7xl">NoWay4u</h2>
     </div>
   </div>
 <% end %>
@@ -60,7 +60,7 @@
         <tr>
           <th class="border-b dark:border-slate-600 p-1 no-sort"></th>
           <% ["Champion", "Anzahl Spiele", "Winrate", "KDA", "CS/Min"].each do |header| %>
-            <th id="sort-by-<%= header.downcase.gsub(/\ |\//, '-') %>" class="border-b dark:border-slate-600 p-2 font-medium text-slate-500 dark:text-slate-200 text-left  <%= 'dir-d' if header == "Anzahl Spiele" %>">
+            <th id="sort-by-<%= header.downcase.gsub(/\ |\//, '-') %>" class="border-b dark:border-slate-600 p-2 font-medium text-slate-500 dark:text-slate-300 text-left  <%= 'dir-d' if header == "Anzahl Spiele" %>">
               <%= header %>
             </th>
           <% end %>

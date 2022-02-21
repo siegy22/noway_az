@@ -8,9 +8,9 @@
       <div class="indicator w-0.5 h-24 bg-black dark:bg-white z-10"></div>
     </div>
   </div>
-  <div class="w-full lg:h-12 md:h-10 bg-gray-200 rounded-full dark:bg-gray-700 -mt-6 lg:-mt-12 md:-mt-10">
-    <%= content_tag :div, class: 'lg:h-12 md:h-10  bg-[#5acd9d] rounded-l-full flex items-center justify-center', style: "width: #{percentage_done(statistics)}%" do %>
-      <span class="md:text-xl whitespace-nowrap text-black dark:text-white" id="progress">
+  <div class="w-full lg:h-12 h-10 bg-gray-200 rounded-full dark:bg-gray-700 -mt-10 lg:-mt-12">
+    <%= content_tag :div, class: 'lg:h-12 h-10  bg-[#5acd9d] rounded-l-full flex items-center justify-center', style: "width: #{percentage_done(statistics)}%" do %>
+      <span class="text-xs sm:text-normal md:text-xl whitespace-nowrap text-black dark:text-white" id="progress">
         <%= statistics.finished_champions.length %> / <%= statistics.total_champions.count %>
       </span>
     <% end %>
