@@ -1,17 +1,18 @@
 <% statistics ||= Statistics.new %>
 <% overlay ||= false %>
 
-<div class="flex flex-row flex-wrap justify-center mt-16">
+
+<div class="flex flex-row flex-wrap justify-center <%= 'mt-16' unless overlay %>">
   <div class="flex w-full">
     <div class="flex flex-col items-center" style="margin-left: calc(<%= percentage_done(statistics) %>% - 228px);">
       <div class="flex flex-row flex-nowrap items-end">
         <% statistics.previous_champions.limit(3).reverse.each.with_index do |prev_champ, index| %>
           <%= image_tag "champions/#{prev_champ.riot_id}.png",
            title: prev_champ.name,
-           class: "w-14 h-14"
+           class: "w-14 h-14 z-10"
           %>
         <% end %>
-        <%= image_tag "champions/#{statistics.current_champion.riot_id}.png", title: statistics.current_champion.name, id: 'current-champion' %>
+        <%= image_tag "champions/#{statistics.current_champion.riot_id}.png", title: statistics.current_champion.name, id: 'current-champion', class: "border border-[#5acd9d] shadow-md shadow-black dark:shadow-white z-0"  %>
         <% statistics.next_champions.limit(3).each.with_index do |next_champ, index| %>
           <%= image_tag "champions/#{next_champ.riot_id}.png",
            title: next_champ.name,
@@ -19,12 +20,12 @@
           %>
         <% end %>
       </div>
-      <div class="indicator w-0.5 h-24 bg-black dark:bg-white z-10"></div>
+      <div class="w-0.5 h-24 bg-[#5acd9d] z-10"></div>
     </div>
   </div>
   <div class="w-full lg:h-12 h-10 bg-gray-200 rounded-full dark:bg-gray-700 -mt-10 lg:-mt-12">
-    <%= content_tag :div, class: 'lg:h-12 h-10  bg-[#5acd9d] rounded-l-full flex items-center justify-center', style: "width: #{percentage_done(statistics)}%" do %>
-      <span class="text-xs sm:text-normal md:text-xl whitespace-nowrap text-black dark:text-white" id="progress">
+    <%= content_tag :div, class: 'lg:h-12 h-10 bg-[#5acd9d] rounded-l-full flex items-center justify-center', style: "width: #{percentage_done(statistics)}%" do %>
+      <span class="text-xs sm:text-normal md:text-xl whitespace-nowrap text-white" id="progress">
         <%= statistics.finished_champions.length %> / <%= statistics.total_champions.count %>
       </span>
     <% end %>
@@ -32,5 +33,13 @@
 </div>
 
 <% if overlay %>
-  <h2 class="text-center -mt-2 neon text-5xl md:text-7xl">NoWay4u</h2>
+  <div class="w-full text-center">
+    <h2 class="-mt-2 neon text-5xl md:text-7xl">NoWay4u</h2>
+  </div>
+  <div class="w-full text-left -mt-12 pl-6">
+    <%= link_to "https://z-a.noway4u.com", "https://z-a.noway4u.com", class: "text-lg text-white info" %>
+  </div>
+  <div class="w-full text-right -mt-8 pr-6">
+    <%= link_to "Created by @Aimaard", "https://siegrist.io", class: "text-xs text-white info" %>
+  </div>
 <% end %>
