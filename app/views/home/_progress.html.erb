@@ -7,17 +7,23 @@
     <div class="flex flex-col items-center" style="margin-left: calc(<%= percentage_done(statistics) %>% - 228px);">
       <div class="flex flex-row flex-nowrap items-end">
         <% statistics.previous_champions.limit(3).reverse.each.with_index do |prev_champ, index| %>
-          <%= image_tag "champions/#{prev_champ.riot_id}.png",
-           title: prev_champ.name,
-           class: "w-14 h-14 z-10"
-          %>
+          <%= link_to "##{prev_champ.statistics_id}" do %>
+            <%= image_tag "champions/#{prev_champ.riot_id}.png",
+             title: prev_champ.name,
+             class: "w-14 h-14 z-10"
+            %>
+          <% end %>
         <% end %>
-        <%= image_tag "champions/#{statistics.current_champion.riot_id}.png", title: statistics.current_champion.name, id: 'current-champion', class: "border border-[#5acd9d] shadow-md shadow-black dark:shadow-white z-0"  %>
+        <%= link_to(root_path(anchor: statistics.current_champion.statistics_id)) do %>
+          <%= image_tag "champions/#{statistics.current_champion.riot_id}.png", title: statistics.current_champion.name, id: 'current-champion', class: "border border-[#5acd9d] shadow-md shadow-black dark:shadow-white z-0 grayscale"  %>
+        <% end %>
         <% statistics.next_champions.limit(3).each.with_index do |next_champ, index| %>
-          <%= image_tag "champions/#{next_champ.riot_id}.png",
-           title: next_champ.name,
-           class: "w-14 h-14 #{'grayscale' unless next_champ.finished? }"
-          %>
+          <%= link_to(root_path(anchor: next_champ.statistics_id)) do %>
+            <%= image_tag "champions/#{next_champ.riot_id}.png",
+             title: next_champ.name,
+             class: "w-14 h-14 #{'grayscale' unless next_champ.finished? }"
+            %>
+          <% end %>
         <% end %>
       </div>
       <div class="w-0.5 h-24 bg-[#5acd9d] z-10"></div>
