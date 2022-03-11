@@ -1,4 +1,4 @@
-<% description "Aktuell bei #{@statistics.current_champion.name} — #{@statistics.total_games} Spiele — #{@statistics.winrate}% Winrate" %>
+<% description "Aktuell bei #{@statistics.current_champion&.name} — #{@statistics.total_games} Spiele — #{@statistics.winrate}% Winrate" %>
 
 <% unless @overlay %>
   <div class="flex flex-row max-w-4xl mx-auto">

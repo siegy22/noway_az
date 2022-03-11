@@ -1,4 +1,8 @@
 class Statistics
+  def challenge_finished?
+    current_champion.nil?
+  end
+
   def total_games
     Match.count
   end
@@ -25,10 +29,14 @@ class Statistics
   end
 
   def previous_champions
+    return Champion.order(name: :asc) if challenge_finished?
+
     Champion.where("name > ?", current_champion.name).order(name: :asc)
   end
 
   def next_champions
+    return Champion.none if challenge_finished?
+
     Champion.where("name < ?", current_champion.name).order(name: :desc)
   end
 
