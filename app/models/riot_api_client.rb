@@ -2,7 +2,7 @@ class RiotApiClient
   include HTTParty
   base_uri 'https://europe.api.riotgames.com/lol'
 
-  START_TIME = Time.zone.parse("Mon, Feb 1, 2022 00:00 AM").to_i
+  START_TIME = Time.zone.parse("Mon, Dec 15, 2023 00:00 AM").to_i
 
   def initialize
     @options = { query: { api_key: Rails.application.config.api_key } }

@@ -1,14 +1,14 @@
 class ApplicationController < ActionController::Base
   def default_meta_tags
     {
-      title: 'Das große Z-A Projekt',
+      title: 'Das große A-Z Projekt',
       reverse: true,
       separator: '|',
       keywords: 'noway, noway4u, noway4u_sir, lol, league of legends, challenge',
       canonical: request.original_url,
       noindex: !Rails.env.production?,
       og: {
-        title: 'Das große Z-A Projekt',
+        title: 'Das große A-Z Projekt',
         type: 'website',
         url: request.original_url,
       }

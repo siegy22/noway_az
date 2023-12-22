@@ -11,7 +11,7 @@ class Statistics
     (Match.where(win: true).count / Match.count.to_f * 100).round
   end
 
-  START_DATE = Date.parse("2022-02-14")
+  START_DATE = Date.parse("2023-12-21")
   def duration
     (Date.today - START_DATE).to_i.days
   end
@@ -25,19 +25,19 @@ class Statistics
   end
 
   def current_champion
-    Champion.where.not(id: finished_champions.map(&:champion_id)).order(name: :desc).first
+    Champion.where.not(id: finished_champions.map(&:champion_id)).order(name: :asc).first
   end
 
   def previous_champions
     return Champion.order(name: :asc) if challenge_finished?
 
-    Champion.where("name > ?", current_champion.name).order(name: :asc)
+    Champion.where("name < ?", current_champion.name).order(name: :asc)
   end
 
   def next_champions
     return Champion.none if challenge_finished?
 
-    Champion.where("name < ?", current_champion.name).order(name: :desc)
+    Champion.where("name > ?", current_champion.name).order(name: :asc)
   end
 
   def champions
