@@ -33,7 +33,7 @@
   <% end %>
   <div class="w-full lg:h-12 h-10 bg-gray-200 rounded-full dark:bg-gray-700">
     <%= content_tag :div, class: "lg:h-12 h-10 bg-[#255941] rounded-l-full flex items-center justify-center #{'rounded-r-full' if statistics.challenge_finished?}", style: "width: #{percentage_done(statistics)}%" do %>
-      <span class="text-xs sm:text-normal md:text-xl whitespace-nowrap text-[#EAF9F2]" id="progress">
+      <span class="text-xs sm:text-normal md:text-xl whitespace-nowrap text-[#EAF9F2] count" id="progress">
         <%= statistics.finished_champions.length %> / <%= statistics.total_champions.count %>
       </span>
     <% end %>
