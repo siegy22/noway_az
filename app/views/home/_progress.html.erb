@@ -9,18 +9,18 @@
         <div class="flex flex-row flex-nowrap items-end">
           <% statistics.previous_champions.limit(3).reverse.each.with_index do |prev_champ, index| %>
             <%= link_to "##{prev_champ.statistics_id}" do %>
-              <%= image_tag "champions/#{prev_champ.riot_id}.png",
+              <%= image_tag prev_champ.image_url,
                title: prev_champ.name,
                class: "max-w-none w-14 h-14 z-10"
               %>
             <% end %>
           <% end %>
           <%= link_to(root_path(anchor: statistics.current_champion.statistics_id)) do %>
-            <%= image_tag "champions/#{statistics.current_champion.riot_id}.png", title: statistics.current_champion.name, id: 'current-champion', class: "max-w-none border border-[#5acd9d] shadow-md shadow-black dark:shadow-white z-0 grayscale"  %>
+              <%= image_tag statistics.current_champion.image_url, title: statistics.current_champion.name, id: 'current-champion', class: "max-w-none border border-[#5acd9d] shadow-md shadow-black dark:shadow-white z-0 grayscale"  %>
           <% end %>
           <% statistics.next_champions.limit(3).each.with_index do |next_champ, index| %>
             <%= link_to(root_path(anchor: next_champ.statistics_id)) do %>
-              <%= image_tag "champions/#{next_champ.riot_id}.png",
+              <%= image_tag next_champ.image_url,
                title: next_champ.name,
                class: "max-w-none w-14 h-14 #{'grayscale' unless next_champ.finished? }"
               %>
