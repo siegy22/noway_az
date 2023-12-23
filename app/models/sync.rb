@@ -13,4 +13,13 @@ class Sync
 
     Turbo::StreamsChannel.broadcast_update_to(:progress, target: "progress", locals: { overlay: true }, partial: "home/progress")
   end
+
+  def self.poll!
+    loop do
+      puts "Starting sync at #{Time.now}"
+      self.start!
+      puts "Finished sync at #{Time.now}"
+      sleep 15
+    end
+  end
 end
