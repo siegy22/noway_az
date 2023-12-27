@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 
-response = HTTParty.get("http://ddragon.leagueoflegends.com/cdn/12.4.1/data/en_US/champion.json")
+response = HTTParty.get("https://ddragon.leagueoflegends.com/cdn/13.24.1/data/en_US/champion.json")
 response["data"].each do |_, data|
   Champion.find_or_create_by!(id: data["key"], name: data["name"], riot_id: data["id"])
 end
