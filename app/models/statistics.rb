@@ -31,7 +31,7 @@ class Statistics
   def previous_champions
     return Champion.order(name: :asc) if challenge_finished?
 
-    Champion.where("name < ?", current_champion.name).order(name: :asc)
+    Champion.where("name < ?", current_champion.name).order(name: :desc)
   end
 
   def next_champions
