@@ -48,4 +48,15 @@ akshan:
   duration: <%= 35.minutes.to_i %>
   cs_per_minute: 9.3
 
+alistar_remake:
+  riot_id: EUW_6
+  win: true
+  champion: alistar
+  kills: 0
+  deaths: 0
+  assists: 0
+  duration: <%= 2.minutes.to_i %>
+  remake: true
+  cs_per_minute: 2
+
 

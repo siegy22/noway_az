@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_02_17_224727) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_05_111016) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -32,6 +32,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_17_224727) do
     t.float "cs_per_minute"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "remake", default: false
     t.index ["champion_id"], name: "index_matches_on_champion_id"
   end
 

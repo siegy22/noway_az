@@ -1,4 +1,5 @@
 class Match < ApplicationRecord
+  default_scope { where.not(remake: true) }
   belongs_to :champion
 
   def self.sync_from_payload!(matches)
@@ -9,6 +10,7 @@ class Match < ApplicationRecord
 
       instance = find_or_create_by!(riot_id: match["metadata"]["matchId"], champion_id: player_data["championId"])
       instance.update!(
+        remake: match["info"]["gameDuration"] < 4.minutes.to_i,
         duration: match["info"]["gameDuration"],
         win: player_data["win"],
         kills: player_data["kills"],

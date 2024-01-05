@@ -4,7 +4,7 @@ class Sync
 
     ActiveRecord::Base.transaction do
       api_client = RiotApiClient.new
-      match_ids = api_client.match_ids
+      match_ids = api_client.match_ids(queue: 420) + api_client.match_ids(queue: 440)
       match_ids -= Match.pluck(:riot_id) unless overwrite
       matches = match_ids.map { |match_id| api_client.match(match_id) }
 

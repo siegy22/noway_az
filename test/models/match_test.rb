@@ -30,6 +30,17 @@ class MatchTest < ActiveSupport::TestCase
     assert_equal Float::INFINITY, match.kda
   end
 
+  test "sync remake" do
+    Match.sync_from_payload!(
+      [
+        create_payload("EUW_100", 3.minutes.to_i, champions(:gragas), true, 12, 0, 13, 240, 10.03, 2.45),
+      ]
+    )
+    assert_raises ActiveRecord::RecordNotFound do
+      Match.find_by!(riot_id: "EUW_100")
+    end
+  end
+
   private
   def create_payload(
     id,

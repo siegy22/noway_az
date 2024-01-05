@@ -8,7 +8,7 @@ class RiotApiClient
     @options = { query: { api_key: Rails.application.config.api_key } }
   end
 
-  def match_ids(start_time = START_TIME)
+  def match_ids(queue: 420, start_time: START_TIME)
     start = 0
     responses = []
     loop do
@@ -17,7 +17,7 @@ class RiotApiClient
         @options.deep_merge(
           query: {
             count: 100,
-            queue: 420,
+            queue: queue,
             startTime: start_time,
             start: start
           }
