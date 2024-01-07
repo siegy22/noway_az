@@ -8,7 +8,7 @@ class Match < ApplicationRecord
         participant["puuid"] == Rails.application.config.noway_puuid
       end
 
-      instance = find_or_create_by!(riot_id: match["metadata"]["matchId"], champion_id: player_data["championId"])
+      instance = unscoped.find_or_create_by!(riot_id: match["metadata"]["matchId"], champion_id: player_data["championId"])
       instance.update!(
         remake: match["info"]["gameDuration"] < 4.minutes.to_i,
         duration: match["info"]["gameDuration"],

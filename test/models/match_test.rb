@@ -41,19 +41,31 @@ class MatchTest < ActiveSupport::TestCase
     end
   end
 
+  test "sync remake doesn't cause duplicates" do
+    assert_difference(-> { Match.unscoped.count }, +1) do
+      2.times do
+        Match.sync_from_payload!(
+          [
+            create_payload("EUW_100", 3.minutes.to_i, champions(:gragas), true, 12, 0, 13, 240, 10.03, 2.45),
+          ]
+        )
+      end
+    end
+  end
+
   private
   def create_payload(
-    id,
-    duration,
-    champion,
-    win,
-    kills,
-    deaths,
-    assists,
-    minion_kills,
-    ally_jungle_monster_kills,
-    enemy_jungle_monster_kills
-  )
+        id,
+        duration,
+        champion,
+        win,
+        kills,
+        deaths,
+        assists,
+        minion_kills,
+        ally_jungle_monster_kills,
+        enemy_jungle_monster_kills
+      )
     {
       "metadata" => {
         "matchId" => id
