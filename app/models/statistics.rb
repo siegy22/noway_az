@@ -25,19 +25,19 @@ class Statistics
   end
 
   def current_champion
-    Champion.where.not(id: finished_champions.map(&:champion_id)).order(name: :asc).first
+    Champion.where.not(id: finished_champions.map(&:champion_id)).order(name: :desc).first
   end
 
   def previous_champions
     return Champion.order(name: :asc) if challenge_finished?
 
-    Champion.where("name < ?", current_champion.name).order(name: :desc)
+    Champion.where("name > ?", current_champion.name).order(name: :asc)
   end
 
   def next_champions
     return Champion.none if challenge_finished?
 
-    Champion.where("name > ?", current_champion.name).order(name: :asc)
+    Champion.where("name < ?", current_champion.name).order(name: :desc)
   end
 
   def champions
