@@ -1,24 +1,12 @@
-# README
+# Noway Challenge (A-Z oder auch Z-A)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- Ruby 3.1
+- Rails 7
 
-Things you may want to cover:
+```
+$ git clone git@github.com:siegy22/noway_az.git
+$ cd noway_az
+$ bin/setup
+$ bin/dev
+```
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
