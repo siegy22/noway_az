@@ -17,7 +17,7 @@
           <% end %>
           <%= link_to(root_path(anchor: statistics.current_champion.statistics_id)) do %>
             <% if statistics.current_champion.name == 'Yuumi' %>
-              <%= image_tag "https://cdn.7tv.app/emote/603caea243b9e100141caf4f/4x.webp", title: statistics.current_champion.name, id: 'current-champion', class: "max-w-none border border-[#5acd9d] shadow-md shadow-black dark:shadow-white z-0 grayscale" style: "height: 120px; width: 120px" %>
+              <%= image_tag "https://cdn.7tv.app/emote/603caea243b9e100141caf4f/4x.webp", title: statistics.current_champion.name, id: 'current-champion', class: "max-w-none border border-[#5acd9d] shadow-md shadow-black dark:shadow-white z-0 grayscale", style: "height: 120px; width: 120px" %>
             <% else %>
               <%= image_tag statistics.current_champion.image_url, title: statistics.current_champion.name, id: 'current-champion', class: "max-w-none border border-[#5acd9d] shadow-md shadow-black dark:shadow-white z-0 grayscale"  %>
             <% end %>
