@@ -2,7 +2,7 @@ class RiotApiClient
   include HTTParty
   base_uri 'https://europe.api.riotgames.com/lol'
 
-  START_TIME = Statistics::START_DATE.noon
+  START_TIME = Statistics::START_DATE.noon.to_i
 
   def initialize
     @options = { query: { api_key: Rails.application.config.api_key } }
