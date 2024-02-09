@@ -79,7 +79,7 @@
           <tr class="border-b border-slate-500 dark:border-slate-600 text-slate-600 dark:text-slate-200" id="champ-stat-<%= stat.champion_riot_id.downcase %>">
             <td class="p-1 <%= color_for_matches_played(stat.matches_played) unless stat.matches_won.zero? %>"></td>
             <td class="p-2 flex flex-row items-center">
-              <%= image_tag "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/#{stat.champion_riot_id}.png", class: 'w-5 h-5 max-w-none rounded-full mr-1' %>
+              <%= image_tag "https://ddragon.leagueoflegends.com/cdn/14.3.1/img/champion/#{stat.champion_riot_id}.png", class: 'w-5 h-5 max-w-none rounded-full mr-1' %>
               <%= stat.champion_name %>
               <% if stat.matches_won.zero? %>
                 <div class="w-2 h-2 ml-1 bg-orange-500 rounded-full"></div>

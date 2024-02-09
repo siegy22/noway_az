@@ -14,6 +14,6 @@ class Champion < ApplicationRecord
   end
 
   def image_url
-    "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/#{riot_id}.png"
+    "https://ddragon.leagueoflegends.com/cdn/14.3.1/img/champion/#{riot_id}.png"
   end
 end
